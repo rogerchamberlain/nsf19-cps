@@ -1,0 +1,16 @@
+NOTES:
+
+The biggest issue we had in the last submission was the fact that the reviewers
+did not see the mirror application as sufficiently general.
+
+Possible foci for this year:
+
+1. Multi-objective optimization - same goals as last year, but genaralize,
+generalize, generalize.  Hidden Markov models, alternatives to MDPs, etc.
+
+2. Safety - how to use imagery as a feedback mechanism for general safety
+considerations.  This should explicilty include privacy concerns for
+individuals who traverse the the field-of-view of the imaging systems.
+
+The mirror project should be articulated as the experimental testbed.
+
