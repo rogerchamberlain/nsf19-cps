@@ -31,7 +31,7 @@ mentor: mentor.tex
 	$(PDFLATEX) mentor
 
 clean:
-	/bin/rm -f *.aux *.log *.dvi *.bbl *.blg
+	/bin/rm -f *.aux *.log *.dvi *.bbl *.blg figures/*.pdf
 
 veryclean: clean
 	/bin/rm -f prop.pdf facilities.pdf budgetjustify.pdf \
