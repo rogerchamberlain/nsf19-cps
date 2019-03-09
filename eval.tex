@@ -1,0 +1,223 @@
+\section{Evaluation/Experimentation Plan}
+\label{sec:eval}
+
+\FIXME{Text from 2018 proposal, needs to be updated.}
+
+In this research we will develop, experiment with, and evaluate three prototype 
+catoptric surfaces, each installed in a different environment and each with
+unique features that will serve to explore different aspects of our approach.
+The first prototype is the system currently being installed in the south window 
+of Steinberg Hall's atrium (described in Section~\ref{sec:background}).
+The second prototype will be designed for and installed at VelociData, Inc.,
+a startup firm in St.~Louis that is located in the recently announced \emph{39~North}
+innovation district.
+The third prototype will be designed for and installed at BECS Technology, Inc.,
+a local manufacturer of electronic control systems that has recently
+relocated to a newly redeveloped 42,000~sq.~ft. facility. We now discuss each
+installation in more detail, followed by a discussion of our software development
+and assessment plans.
+
+\subsection{Steinberg Hall, Washington University in St. Louis}
+
+Steinberg Hall is situated on the Danforth Campus of Washington University
+in St.~Louis. It is one of the buildings housing the university's College 
+of Architecture, and is within easy walking distance of the Dept. of
+Computer Science and Engineering.
+
+The catoptric surface that is being installed at the south end of the
+atrium will be complete by the start of the proposed research project.
+We will use it for a number of purposes in our proposed research:
+\begin{enumerate}
+
+\item \emph{Development and calibration of quantitative daylight delivery models.}
+We will evaluate the effectiveness of our current ray-tracing software
+system in assessing the impact of different configurations of the surface
+(i.e., various mirror positions).  Empirical evaluation will use a number
+of light meters distributed within the space. The data collected will be
+compared to our predictions as well as the analytical models
+of both Bueno et al.~\cite{bwkk15} and Galatioto and Beccali~\cite{gb16}.
+
+\item \emph{Practical aspects.}  We expect to learn a number of
+  practical things from this installation. By design, these will
+  include the positioning precision that is achievable with our
+  current physical design, the viability of operating the mirror
+  positioning motors open-loop (the pan-tilt is stepper motor driven
+  and the current system does not incorporate shaft encoders or other
+  positioning feedback), the benefits (if any) of controlling
+  acceleration in addition to position, the timing requirements for
+  configuration changes, and the ability to effect multiple mirror
+  movements in parallel. In addition, we expect to discover new insights
+  beyond these anticipated issues, simply through the direct implementation, 
+  experimentation, and evaluation of systems.
+
+\item \emph{Investigation of the ability to provide positioning feedback via
+image analysis.}  We will install a camera with the full surface in its
+field of view and assess the viability of using image analysis techniques
+to discern the orientation of each mirror.  An important component of this
+investigation will be to quantify the degree of precision that is achievable.
+
+\item \emph{Quantification of the viable heat transfer.}
+We will perform a controlled experiment in which we will focus varying
+amounts of sunlight on a vessel of water to determine the temperature
+rise that is achievable.  This will enable us to calibrate heat transfer
+models that will go into the MDP formulation.
+
+\item \emph{Reliability testing of the components.}
+This installation is not permanent. When it is decommissioned, we will
+setup a representative collection of the mirror components in our laboratory
+for stress testing (to failure).  This will allow us to calibrate our
+reliability models for inclusion in the MDPs.
+
+\end{enumerate}
+
+\subsection{VelociData, Inc., 39 North Innovation District}
+
+VelociData, Inc., is located at 10425 Old Olive Street Rd., St.~Louis, MO.
+They are in the \emph{39 North} innovation district, which has the Danforth
+Plant Science Center, Monsanto, Bio Research \& Development Growth Park,
+and Heliz Center Biotech Incubator as anchors. It is a 10~min.~drive from
+the Washington University Danforth Campus, and they have given us
+permission to install a prototype at their facility (see letter
+of collaboration).
+
+There are a pair of potential installation sites at VelociData's location:
+an east-facing window provides light to an individual's office, and
+(the more interesting option) a pair of west-facing windows that provide
+light to a bullpen of cubicles occupied by design engineers.
+As we will not be able to tie into the HVAC system at this location, our
+objectives will be focused on the daylighting benefits, including their
+impact on the occupants of the space\footnote{All experimentation that
+includes human subjects will undergo review by the Washington University
+IRB prior to implementation.}.
+
+We will use this installation for the following purposes:
+
+\begin{enumerate}
+
+\item \emph{Perform safety testing}\footnote{Note: we only operate the Steinberg
+surface under active human supervision, as the automated safe operation cannot yet be 
+ensured.}.
+We will perform stress testing on the installed system, injecting errors so as to
+intentionally attempt to create unsafe conditions, all the while monitoring
+to ensure that safety is maintained.
+
+\item \emph{Assess utility of non-southern facing windows.}
+Since the windows at VelociData's location are on the top floor, and face
+either east or west, this gives us the opportunity to explore the viability
+of exploiting multiple-reflection designs
+(e.g., a fixed position mirror above the
+roofline that redirects sunlight to the active catoptric surface).
+
+\item \emph{Evaluate human responses.}
+While we do not have the budget in this project to perform
+comprehensive productivity analyses, we will be in a position to
+query the building occupants about their experience with the
+daylight effects. E.g., do they see value in the controllability
+of the quantity of daylight?
+
+\item \emph{Iterate to refine the design.}
+As these are prototype systems, we have no expectation that the
+initial versions will operate entirely as desired.  We will redesign
+and rebuild as needed to make progress on the research questions we
+are investigating.
+
+\end{enumerate}
+
+\subsection{BECS Technology, Inc., St. Louis County}
+
+BECS Technology, Inc., is located at
+10818~Midwest Industrial Dr., St.~Louis, MO.
+They are a small manufacturer of electronic control
+systems for a number of markets (e.g., agriculture, aquatics, refrigeration).
+The unique benefit to this installation is that they have agreed to
+allow us to have access to the HVAC system in their building (see letter
+of collaboration).
+
+The HVAC system at BECS is one in which the hydronic water loop
+also serves as the fire protection sprinkler system~\cite{Janus01,wm79}.
+Individual heat exchangers either deliver heat into the loop 
+(e.g., from a boiler) or extract heat from the loop (e.g., to a
+cooling tower).
+An experimental loop that can be the focus point for light from
+a catoptric surface can be readily incorporated into a system such
+as this.  The integration is made even easier because BECS, as
+a manufacturer of aquatics equipment, uses a controller of its own
+design to manage the entire system.
+
+We will use this installation for the following purposes:
+
+\begin{enumerate}
+
+\item \emph{Repeat assessments from initial installations.}
+As each installation will have a unique configuration, we will exploit the
+latter two installations (at VelociData and BECS) to perform common
+experiments at each, comparing the results to increase the confidence
+in any conclusions that we draw based on empirical data.
+This will include all of the calibration efforts, as well as the comparison
+of empirical data to the theoretical models (both for daylight delivery
+and thermal heat transfer).
+This will also include any human evaluations that are undertaken at
+the VelociData site.
+
+\item \emph{Integration into the HVAC system.}
+We will implement a heating loop that is capable of delivering
+thermal energy into the building's main hydronic water loop.
+The temperature of the water in this loop will be logged, and the
+master HVAC controller (built by BECS) will enable us to determine
+the effectiveness of the heat transfer.  We will also be able to
+quantify the amount of energy savings that results.
+
+\item \emph{Assessment of manufacturability.}
+As described in the Transfer to Practice Supplementary Document, BECS
+is planning to assist us in evaluating the commercial viability of the
+catoptric surface as a product.  An important piece of this evaluation is
+the assessment (by design and manufacturing engineers at BECS) of the
+manufacturability of the system.
+
+\item \emph{Iterate to refine the design.} Again, we do not expect the initial design
+to be all that it can be. As for the previous systems, we will redesign
+and rebuild as needed.
+
+\end{enumerate}
+
+\subsection{Software Development and Assessment}
+
+The current software for raytracing and physical modeling is within
+Rhinoceros 3D (Rhino3D), a free form surface modeling system that utilizes a
+non-uniform rational B-spline (NURBS) mathematical representation.
+The current optimization (not MDP-based) is coded using
+Grasshopper, a visual programming language plug-in.
+Grasshopper has been used in the past for lighting performance
+analysis~\cite{Echarri16,Willis16}.
+
+The existing positioning software is written in a combination of
+Python (executing on a Raspberry Pi) and C (executing on an Arduino Uno).
+The Rhino3D/Grasshopper output is made available to the Python code via CSV
+files in the filesystem.
+
+The existing MDP model software is written in C++ and currently is not integrated
+into the above software components at all.
+Clearly, an important software development task in this research project
+will be to enable each of the above software elements to interact with one
+another, preferably in a relatively seamless manner, aided by modern compilers'
+and iterpreters' ability to integrate code written in multiple programming
+languages.
+
+When our research group develops software that is intended to support
+the research questions being investigated (as opposed to the software
+effort being the research question itself), we have a practice of adopting
+software engineering techniques that closely approximate those used
+in industrial settings.  For example, we have regular code reviews,
+testing is performed by individuals who are distinct from the developers,
+the software design is presented to the group and its pros and cons
+discussed prior to implementation, etc.
+
+The assessment of the software will primarily be embodied in the evaluation
+of the catoptric surfaces themselves.  However, we will evaluate the
+performance of all of the software, ensuring that execution times are
+reasonable for off-line tasks and deadlines are met for real-time tasks.
+All software developed in this proposed research will be released as open-source,
+and in addition to making the code freely available on the web we will provide
+specific mechanisms for the broader research community to interact with our
+team to provide feedback, request enhancements, and otherwise engage with
+us as we conduct this research.
